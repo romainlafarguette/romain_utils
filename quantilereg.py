@@ -2,14 +2,14 @@
 """
 Estimate quantiles regressions, retrieve coefficients and conditional quantiles
 rlafarguette@imf.org
-Time-stamp: "2019-06-19 23:00:55 Romain"
+Time-stamp: "2019-12-20 15:30:09 RLafarguette"
 Edit by cwang2@imf.org for also outputing Intercept
 """
 
 ###############################################################################
 #%% Modules import
 ###############################################################################
-## Globals
+# Globals
 import importlib
 import pandas as pd                                     ## Dataframes
 import numpy as np                                      ## Numeric methods
@@ -18,18 +18,18 @@ import statsmodels.formula.api as smf                   ## Formulas
 import time                                             ## Processing time
 from sklearn.preprocessing import scale                 ## Scale the variables 
 
-## Global plotting modules
+# Global plotting modules
 import matplotlib.pyplot as plt                         ## Pyplot
 from matplotlib import gridspec                         ## Plotting grid
 
-## Local plotting functions (local modules in the same directory)
+# Local plotting functions (local modules in the same directory)
 import garplots; importlib.reload(garplots)             ## Plot functions
 from garplots import single_coeff_plot, r2_plot         ## Plot coeffs
 
 ###############################################################################
 #%% Ancillary functions
 ###############################################################################
-## Break a list into sublists of length n
+# Break a list into sublists of length n
 def sublist_chunks(long_list, n):
     sublists_l = [long_list[i:i + n]  for i in range(0, len(long_list), n)]
     return(sublists_l)
