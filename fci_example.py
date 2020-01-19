@@ -2,7 +2,7 @@
 """
 Compute FCI (Financial Conditions Indexes) with PCA and PLS
 Romain Lafarguette, International Monetary Fund, rlafarguette@imf.org
-Time-stamp: "2020-01-19 12:06:47 RLafarguette"
+Time-stamp: "2020-01-19 12:14:03 RLafarguette"
 """
 
 ###############################################################################
@@ -144,9 +144,9 @@ plt.show()
 ###############################################################################
 dcomp = pd.merge(dpca, dpls, left_index=True, right_index=True, how='inner')
 
+# To be interepreted the same way, need to flip the PLS, so that up means tight
 dcomp['FCI_PLS_inv'] = (-1)*dcomp['FCI_PLS'].copy()
 
-# To be interepreted the same way, need to flip the PLS, so that up means tight
 dcomp[['FCI_PCA', 'FCI_PLS_inv']].plot(
     title='FCIs comparison between unsupervised and supervised learning')
 plt.hlines(y=0, xmin=dcomp.index.min(), xmax=dcomp.index.max())
