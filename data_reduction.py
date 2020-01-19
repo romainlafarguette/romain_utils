@@ -2,26 +2,26 @@
 """
 Run a PLS on a set of variables and target variables
 Romain Lafarguette, rlafarguette@imf.org
-Time-stamp: "2019-11-18 11:12:07 RLafarguette"
+Time-stamp: "2019-12-20 15:35:02 RLafarguette"
 """
 
 ###############################################################################
 #%% Modules and methods
 ###############################################################################
-## Modules imports
+# Modules imports
 import pandas as pd                                     ## Data management
 import numpy as np                                      ## Numeric tools
 
-## Functional import
+# Functional import
 from pandas import Timestamp as date                    ## Dates manipulation
 from collections import namedtuple                      ## Containers 
 
-## Method imports
+# Method imports
 from sklearn.decomposition import PCA                   # PCA
 from sklearn.cross_decomposition import PLSRegression   # PLS
 from sklearn.preprocessing import scale                 # Zscore
 
-## Global plotting modules
+# Global plotting modules
 import matplotlib.pyplot as plt                         # Pyplot
 from matplotlib import gridspec                         # Plotting grid
 
